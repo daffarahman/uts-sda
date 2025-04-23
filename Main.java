@@ -156,7 +156,12 @@ public class Main {
         tree.insert(49);
         tree.insert(40);
         
-        tree.print();
+        tree.display();
+        tree.preorder();
+        tree.inorder();
+        tree.postorder();
+        System.out.println(tree.getHeight(true));
+        System.out.println(tree.getHeight(false));
 	}
 
 	public static void mapMain() {
