@@ -56,7 +56,6 @@ public class Set {
 	}
 
 	public Set union(Set anotherSet) {
-		int newSize = (this.size > anotherSet.size)? this.size : anotherSet.size;
 		Set newSet = new Set(anotherSet.size);
 		for(int i = 0; i < this.length; i++) {
 			newSet.add(this.arr[i]);
@@ -75,5 +74,29 @@ public class Set {
 			}
 		}
 		return newSet;
+	}
+
+	public Set setDifference(Set anotherSet) {
+		int newSize = (this.size > anotherSet.size)? this.size : anotherSet.size;
+		Set newSet = new Set(newSize);
+		for(int i = 0; i < this.length; i++) {
+			if(!anotherSet.isIn(this.arr[i])) newSet.add(this.arr[i]);
+		}
+		for(int i = 0; i < anotherSet.length;i++) {
+			if(!this.isIn(anotherSet.arr[i])) newSet.add(anotherSet.arr[i]);
+		}
+		return newSet;
+	}
+
+	public boolean isSubsetOf(Set anotherSet) {
+		if(this.length <= anotherSet.length) {
+			for(int i = 0; i < this.length; i++) {
+				if(!anotherSet.isIn(this.arr[i])) return false;
+			}
+
+			return true;
+		}
+
+		return false;
 	}
 }

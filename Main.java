@@ -23,7 +23,7 @@ public class Main {
 
 		System.out.println("\n\n::::: Tree :::::\n");
 		System.out.println("\nBinary Tree: ");
-		treeMain();
+		binaryTreeMain();
 
 		System.out.println("\n\n::::: Map :::::\n");
 		mapMain();
@@ -121,15 +121,29 @@ public class Main {
 
 		System.out.println(newSet1.isEqual(newSet2));
 
-		Set newSet3 = newSet1.union(newSet2);
+		Set unionSet = newSet1.union(newSet2);
+		unionSet.print();
+
+		Set intersectionSet = newSet1.intersection(newSet2);
+		intersectionSet.print();
+
+		Set differenceSet = newSet1.setDifference(newSet2);
+		differenceSet.print();
+
+		Set newSet3 = new Set(100);
+		newSet3.add(2);
+		newSet3.add(5);
 		newSet3.print();
 
-		Set newSet4 = newSet1.intersection(newSet2);
-		newSet4.print();
+		System.out.println(newSet3.isSubsetOf(newSet1));
+
+		newSet3.add(9);
+		newSet3.print();
+		System.out.println(newSet3.isSubsetOf(newSet1));
 	}
 
-	public static void treeMain() {
-		Tree tree = new Tree();
+	public static void binaryTreeMain() {
+		BinaryTree tree = new BinaryTree();
 
 		tree.insert(20);
         tree.insert(10);

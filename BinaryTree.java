@@ -10,10 +10,10 @@ class TreeNode {
     }
 }
 
-class Tree {
+class BinaryTree {
     TreeNode root;
 
-    public Tree() {
+    public BinaryTree() {
         this.root = null;
     }
 
