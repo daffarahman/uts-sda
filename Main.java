@@ -22,6 +22,9 @@ public class Main {
 		setMain();
 
 		System.out.println("\n\n::::: Tree :::::\n");
+		System.out.println("\nBinary Search Tree: ");
+		binarySearchTreeMain();
+
 		System.out.println("\nBinary Tree: ");
 		binaryTreeMain();
 
@@ -142,26 +145,42 @@ public class Main {
 		System.out.println(newSet3.isSubsetOf(newSet1));
 	}
 
-	public static void binaryTreeMain() {
-		BinaryTree tree = new BinaryTree();
+	public static void binarySearchTreeMain() {
+		BinarySearchTree bst = new BinarySearchTree();
 
-		tree.insert(20);
-        tree.insert(10);
-        tree.insert(30);
-        tree.insert(6);
-        tree.insert(25);
-        tree.insert(28);
-        tree.insert(2);
-        tree.insert(5);
-        tree.insert(49);
-        tree.insert(40);
+		bst.insert(20);
+        bst.insert(10);
+        bst.insert(30);
+        bst.insert(6);
+        bst.insert(25);
+        bst.insert(28);
+        bst.insert(2);
+        bst.insert(5);
+        bst.insert(49);
+        bst.insert(40);
         
-        tree.display();
-        tree.preorder();
-        tree.inorder();
-        tree.postorder();
-        System.out.println(tree.getHeight(true));
-        System.out.println(tree.getHeight(false));
+        bst.display();
+        bst.preorder();
+        bst.inorder();
+        bst.postorder();
+        System.out.println(bst.getHeight(true));
+        System.out.println(bst.getHeight(false));
+	}
+
+	public static void binaryTreeMain() {
+		BinaryTree bt = new BinaryTree();
+		bt.root = new TreeNode(5);
+		bt.root.left = new TreeNode(9);
+		bt.root.left.left = new TreeNode(8);
+		bt.root.left.left.right = new TreeNode(2);
+		bt.root.right = new TreeNode(2);
+
+		bt.display();
+        bt.preorder();
+        bt.inorder();
+        bt.postorder();
+        System.out.println(bt.getHeight(true));
+        System.out.println(bt.getHeight(false));
 	}
 
 	public static void mapMain() {
