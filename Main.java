@@ -33,7 +33,18 @@ public class Main {
 	}
 
 	public static void linkedListMain() {
-
+		LinkedList ll = new LinkedList();
+		ll.append(5);
+		ll.append(2);
+		ll.append(3);
+		ll.print();
+		ll.prepend(7);
+		ll.print();
+		ll.remove(2);
+		ll.print();
+		ll.remove(3);
+		ll.remove(7);
+		ll.print();
 	}
 
 	public static void linkedStackMain() {
